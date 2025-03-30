@@ -2,7 +2,7 @@
 function SearchBar() {
     return (
       <div>
-        <h1>Start of SearchBar</h1>
+        <h2>I'm a SearchBar :)</h2>
       </div>
     );
   }

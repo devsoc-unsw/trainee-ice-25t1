@@ -2,7 +2,7 @@
 function SubjectPanel() {
     return (
       <div>
-        <h1>Start of SubjectPanel</h1>
+        <h2>I'm a SubjectPanel :]</h2>
       </div>
     );
   }
