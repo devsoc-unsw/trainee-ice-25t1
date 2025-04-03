@@ -1,3 +1,6 @@
+// This now uses ListData.json but that would become the list from
+// the subject panel once that's finished.
+
 import data from "./ListData.json"
 
 type ListProps = {
