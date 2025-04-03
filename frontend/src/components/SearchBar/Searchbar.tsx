@@ -1,25 +1,27 @@
-import { useState } from "react";
+import React, { useState } from "react";
+import TextField from "@mui/material/TextField";
+import List from "../List.tsx"
 
 function SearchBar() {
-  const [query, setQuery] = useState("");
+  const [inputText, setInputText] = useState("");
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setQuery(e.target.value);
-  };
-
-  const handleSearch = () => {
-    console.log("Searching for:", query); 
+    setInputText(e.target.value.toLowerCase());
   };
 
   return (
     <div>
-      <input
-        type="text"
-        placeholder="Search..."
-        value={query}
+      <h2>I'm a SearchBar :)</h2>
+      {/* for debugging: */}
+      <p>Searching for: {inputText}</p>
+      <TextField
+        id="outlined-basic"
         onChange={handleInputChange}
+        variant="outlined"
+        fullWidth
+        label="Search"
       />
-      <button onClick={handleSearch}>Search</button>
+      <List input={inputText} />
     </div>
   );
 }
