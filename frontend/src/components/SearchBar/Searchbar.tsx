@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import TextField from "@mui/material/TextField";
 import List from "../List.tsx"
 
-function SearchBar() {
-  const [inputText, setInputText] = useState("");
+type SearchBarProps = {
+  inputText: string;
+  setInputText: React.Dispatch<React.SetStateAction<string>>;
+};
 
+function SearchBar({ inputText, setInputText }: SearchBarProps) {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputText(e.target.value.toLowerCase());
   };
@@ -21,8 +24,6 @@ function SearchBar() {
         fullWidth
         label="Search"
       />
-      {/* The list below would become the subject panel once that component is finished */}
-      <List input={inputText} />
     </div>
   );
 }
