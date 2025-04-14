@@ -1,0 +1,121 @@
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("/background.png");
+    background-size: cover;
+    z-index: 1; 
+}
+
+.bubble-right-up {
+    position: absolute;
+    top: 2%;
+    right: 8%;
+    width: 520px;
+    height: 520px;
+    z-index: 2;
+}
+
+.bubble-right-down {
+    position: absolute;
+    bottom: 12%;
+    right: 3%;
+    width: 267px;
+    height: 267px;
+    z-index: 2;  
+}
+
+.bubble-center-down {
+    position: absolute;
+    bottom: .5%;
+    right: 32%;
+    width: 290px;
+    height: 290px;
+    z-index: 2;  
+}
+
+.bubble-center-middle {
+    position: absolute;
+    bottom: 23%;
+    right: 45%;
+    width: 470px;
+    height: 470px;
+    z-index: 2;  
+}
+
+.bubble-left-down {
+    position: absolute;
+    bottom: 17%;
+    right: 69%;
+    width: 122px;
+    height: 122px;
+    z-index: 2;  
+}
+
+.bubble-left-middle {
+    position: absolute;
+    bottom: 40%;
+    right: 71%;
+    width: 218px;
+    height: 218px;
+    z-index: 2;  
+}
+
+.bubble-left-top {
+    position: absolute;
+    bottom: 60%;
+    right: 76%;
+    width: 339px;
+    height: 339px;
+    z-index: 2;  
+}
+
+.container {
+    position: relative; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    z-index: 3; 
+}
+
+.title {
+    font-family: 'Kaushan Script', sans-serif;
+    font-size: 200px;
+    color: #92C38B;
+    margin-top: 15%;
+    margin-bottom: 5px;
+    z-index: 3; 
+}
+
+.green-button {
+    background-color: #2B9751;
+    color: white;
+    width: 270px;
+    height: 85px;
+    border: none;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    gap: 10px;
+    font-size: 27px;
+    font-family: "Karla", sans-serif;
+    font-weight: 700;
+    z-index: 3; 
+}
+
+.green-button:hover {
+    background-color: #1b8841;
+}
+
+.arrow-button {
+    width: 34px;
+    height: 35px;
+    z-index: 4; 
+}
