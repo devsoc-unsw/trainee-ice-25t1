@@ -1,0 +1,24 @@
+
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: var(--bg-height, 100vh); 
+  background-image: url("/background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: -1;
+}
+
+.courses-container {
+    display: flex;
+}
+
+.courses-container > div {
+    flex: 1;              
+    padding: 1rem;         
+    box-sizing: border-box;
+}
