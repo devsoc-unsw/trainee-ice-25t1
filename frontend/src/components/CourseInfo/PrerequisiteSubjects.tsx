@@ -1,8 +1,8 @@
-function PrerequisiteSubjects() {
+function PrerequisiteSubjects({ prereq } : { prereq : string }) {
   return (
     <div>
-      <h2>Prerequisite Subjects</h2>
-      <p>COMP1511 or DPST1091 or COMP1911 or COMP1917</p>
+      <h2>Prerequisites</h2>
+      <p>{ prereq }</p>
     </div>
   );
 }
