@@ -1,21 +1,11 @@
-.background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-image: url("/background.png");
-    background-size: cover;
-    z-index: 1; 
-}
-
 .bubble-right-up {
     position: absolute;
     top: 2%;
     right: 8%;
     width: 520px;
     height: 520px;
-    z-index: 2;
+    z-index: 4;
+    opacity: 65%;
 }
 
 .bubble-right-down {
@@ -80,13 +70,13 @@
     justify-content: center;
     text-align: center;
     margin: auto;
-    z-index: 3; 
 }
 
 .title {
     font-family: 'Kaushan Script', sans-serif;
-    font-size: 200px;
-    color: #92C38B;
+    font-size: 12rem;
+    font-weight: 100;
+    color: #15440f;
     margin-top: 15%;
     margin-bottom: 5px;
     z-index: 3; 
@@ -107,7 +97,8 @@
     font-size: 27px;
     font-family: "Karla", sans-serif;
     font-weight: 700;
-    z-index: 3; 
+    z-index: 10; 
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .green-button:hover {
