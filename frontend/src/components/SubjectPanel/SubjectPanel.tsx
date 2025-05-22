@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
 import './SubjectPanel.css';
 
+import { useNavigate } from 'react-router-dom';
+
+
 type SubjectPanelProps = {
   inputText: string;
 };
 
 function SubjectPanel({ inputText }: SubjectPanelProps) {
+  const navigate = useNavigate();
+
   const [subjects] = useState([
     { id: 1, text: "COMP1511" },
     { id: 2, text: "COMP1521" },
@@ -21,7 +26,7 @@ function SubjectPanel({ inputText }: SubjectPanelProps) {
   return (
     <div className="grid-container">
       {filteredSubjects.map(subject => (
-        <div key={subject.id} className="subject-box">
+        <div key={subject.id} className="subject-box" onClick={() => navigate(`/course-info?code=${subject.text}`)}>
           {subject.text}
         </div>
       ))}
