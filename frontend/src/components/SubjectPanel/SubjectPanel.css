@@ -16,4 +16,8 @@
     font-size: 24px;
     color: black;
 }
+
+.subject-box:hover {
+    cursor: pointer;
+}
   
