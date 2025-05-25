@@ -7,10 +7,14 @@ interface CourseCompareTableProps {
   code2: string;
 }
 export default function CourseCompareTable({code1, code2}: CourseCompareTableProps) {
+
+  const assessment1True = code1 in courseData;
+  const assessment2True = code2 in courseData;
+  const weekArray = ["week1", "week2", "week3", "week4", "week5", "week6", "week7", "week8", "week9", "week10", "week11"]
   return (
 
     <div className="course-compare-table">
-      <div>.</div>
+      <div></div>
       <h1>{code1}</h1>
       <h1>{code2}</h1>
 
@@ -32,73 +36,17 @@ export default function CourseCompareTable({code1, code2}: CourseCompareTablePro
       {/* @ts-ignore */}
       <h3>{courseData[code2]["terms"].join(', ')}</h3>
 
+      {weekArray.map((week, i) => {
+        return (
+        <>
+          <h2>Week {i + 1}</h2>
+          {/* @ts-ignore */}
+          <h3>{assessment1True ? assessmentData[code1]["assessment_timeline"][week].join('; ') : "Unavailable"}</h3>
+          {/* @ts-ignore */}
+          <h3>{assessment2True ? assessmentData[code2]["assessment_timeline"][week].join('; ') : "Unavailable"}</h3>
+        </>)
+      })}
 
-      <h2>Week 1</h2>
-      {/* @ts-ignore */}
-      <h3>{assessmentData[code1]["assessment_timeline"]["week1"].join('; ')}</h3>
-      {/* @ts-ignore */}
-      <h3>{assessmentData[code2]["assessment_timeline"]["week1"].join('; ')}</h3>
-
-      <h2>Week 2</h2>
-
-      {/* @ts-ignore */}
-      <h3>{assessmentData[code1]["assessment_timeline"]["week2"].join('; ')}</h3>
-      {/* @ts-ignore */}
-      <h3>{assessmentData[code2]["assessment_timeline"]["week2"].join('; ')}</h3>
-
-      <h2>Week 3</h2>
-      {/* @ts-ignore */}
-      <h3>{assessmentData[code1]["assessment_timeline"]["week3"].join('; ')}</h3>
-      {/* @ts-ignore */}
-      <h3>{assessmentData[code2]["assessment_timeline"]["week3"].join('; ')}</h3>
-
-      <h2>Week 4</h2>
-      {/* @ts-ignore */}
-      <h3>{assessmentData[code1]["assessment_timeline"]["week4"].join('; ')}</h3>
-      {/* @ts-ignore */}
-      <h3>{assessmentData[code2]["assessment_timeline"]["week4"].join('; ')}</h3>
-
-      <h2>Week 5</h2>
-      {/* @ts-ignore */}
-      <h3>{assessmentData[code1]["assessment_timeline"]["week5"].join('; ')}</h3>
-      {/* @ts-ignore */}
-      <h3>{assessmentData[code2]["assessment_timeline"]["week5"].join('; ')}</h3>
-
-      <h2>Week 6</h2>
-      {/* @ts-ignore */}
-      <h3>{assessmentData[code1]["assessment_timeline"]["week6"].join('; ')}</h3>
-      {/* @ts-ignore */}
-      <h3>{assessmentData[code2]["assessment_timeline"]["week6"].join('; ')}</h3>
-
-      <h2>Week 7</h2>
-      {/* @ts-ignore */}
-      <h3>{assessmentData[code1]["assessment_timeline"]["week7"].join('; ')}</h3>
-      {/* @ts-ignore */}
-      <h3>{assessmentData[code2]["assessment_timeline"]["week7"].join('; ')}</h3>
-
-      <h2>Week 8</h2>
-      {/* @ts-ignore */}
-      <h3>{assessmentData[code1]["assessment_timeline"]["week8"].join('; ')}</h3>
-      {/* @ts-ignore */}
-      <h3>{assessmentData[code2]["assessment_timeline"]["week8"].join('; ')}</h3>
-
-      <h2>Week 9</h2>
-      {/* @ts-ignore */}
-      <h3>{assessmentData[code1]["assessment_timeline"]["week9"].join('; ')}</h3>
-      {/* @ts-ignore */}
-      <h3>{assessmentData[code2]["assessment_timeline"]["week9"].join('; ')}</h3>
-
-      <h2>Week 10</h2>
-      {/* @ts-ignore */}
-      <h3>{assessmentData[code1]["assessment_timeline"]["week10"].join('; ')}</h3>
-      {/* @ts-ignore */}
-      <h3>{assessmentData[code2]["assessment_timeline"]["week10"].join('; ')}</h3>
-
-      <h2>Week 11</h2>
-      {/* @ts-ignore */}
-      <h3>{assessmentData[code1]["assessment_timeline"]["week11"].join('; ')}</h3>
-      {/* @ts-ignore */}
-      <h3>{assessmentData[code2]["assessment_timeline"]["week11"].join('; ')}</h3>
     </div>
   )
 

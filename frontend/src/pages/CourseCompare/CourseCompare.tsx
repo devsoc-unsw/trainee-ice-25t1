@@ -1,30 +1,41 @@
 // import CourseInfo from '../CourseInfo/CourseInfo.tsx';
 import './CourseCompare.css';
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
-import { useLocation } from 'react-router-dom';
+// import { useLocation } from 'react-router-dom';
 import CourseCompareTable from './CourseCompareTable.tsx';
-import CourseInfo from '../CourseInfo/CourseInfo.tsx';
+// import CourseInfo from '../CourseInfo/CourseInfo.tsx';
 
-const useQuery = () => {
-  return new URLSearchParams(useLocation().search);
-};
+import TextField from '@mui/material/TextField';
+import Autocomplete from '@mui/material/Autocomplete';
+import courseData from "../../CourseData.json"
+
+
+
+
+// const useQuery = () => {
+//   return new URLSearchParams(useLocation().search);
+// };
 
 function CourseCompare() {
+
+  const [code1, setCode1] = useState<string | null>(null);
+  const [code2, setCode2] = useState<string | null>(null)
+
   const backgroundRef = useRef<HTMLDivElement>(null);
 
-  const query = useQuery();
+  // const query = useQuery();
 
-  var code1 = query.get('code1') as string;
-  var code2 = query.get('code2') as string;
+  // var code1 = query.get('code1') as string;
+  // var code2 = query.get('code2') as string;
 
-  if (!code1)
-    code1 = 'COMP1511';
-  if (!code2)
-    code2 = 'COMP1531';
+  // if (!code1)
+  //   code1 = 'COMP1511';
+  // if (!code2)
+  //   code2 = 'COMP1531';
 
-  code1 = code1.toUpperCase();
-  code2 =  code2.toUpperCase();
+  // code1 = code1.toUpperCase();
+  // code2 =  code2.toUpperCase();
 
   useEffect(() => {
     function updateHeight() {
@@ -48,12 +59,34 @@ function CourseCompare() {
 
   return (
     <div>
-      <div className="courses-container">
-        {/* <div><CourseInfo code={code1}/></div>
-        <div><CourseInfo code={code2}/></div> */}
+        <div className='course-compare-searchbars'>
+          <div className='autocomplete-wrapper'>
+            <Autocomplete
+              disablePortal
+              options={Object.keys(courseData)}
+              sx={{ width: 300 }}
+              renderInput={(params) => <TextField {...params} label="Course 1" />}
+              onChange={(event, newInputValue) => setCode1(newInputValue)}
 
+            />
+          </div>
+          <div className='autocomplete-wrapper'>
+            <Autocomplete
+              disablePortal
+              options={Object.keys(courseData)}
+              sx={{ width: 300 }}
+              renderInput={(params) => <TextField {...params} label="Course 2" />}
+              onChange={(event, newInputValue) => setCode2(newInputValue)}
+            />
+          </div>
+        </div>
+
+      {code1 && code2 && 
+
+      <div className="courses-container">
         <CourseCompareTable code1={code1} code2={code2} />
       </div>
+      }
     </div>
   );
 }
