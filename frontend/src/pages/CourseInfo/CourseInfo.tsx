@@ -8,33 +8,41 @@ import { CourseData } from '../../types/courses.ts'
 import { useLocation } from 'react-router-dom';
 
 import './CourseInfo.css';
+import { CourseCodeInterface } from '../../components/CourseInfo/CourseCodeInterface.tsx';
 
 const useQuery = () => {
   return new URLSearchParams(useLocation().search);
 };
 
-function CourseInfo() {
+function CourseInfo({code}: CourseCodeInterface) {
   const query = useQuery();
 
-  var code = query.get('code');
-  if (!code)
-    code = 'COMP1511';
+  var _code; 
+  
+  if (!code) {
+    _code = query.get('code') as string;
+  } else {
+    _code = code;
+  }
 
-  code = code.toLocaleUpperCase()
+  if (!_code)
+    _code = 'COMP1511'
+
+  _code = _code.toLocaleUpperCase()
 
   const courseData = CourseDataRaw as CourseData;
-  const course = courseData[code];
+  const course = courseData[_code];
   return (
     <div>
-      <h1>📖{code}</h1>
+      <h1>📖{_code}</h1>
       <CourseDescription description={course.description} />
 
       <div className="prerequisites_grid">
-        <PrerequisiteSkills code={code}/>
+        <PrerequisiteSkills code={_code}/>
         <PrerequisiteSubjects prereq={course.raw_requirements} />
       </div>
 
-      <Timeline code={code}/>
+      <Timeline code={_code}/>
     </div>
   );
 }

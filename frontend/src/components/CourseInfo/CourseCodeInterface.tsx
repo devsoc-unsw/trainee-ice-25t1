@@ -1,5 +1,5 @@
 
 
 export interface CourseCodeInterface {
-  code: string;
+  code: string | null;
 }

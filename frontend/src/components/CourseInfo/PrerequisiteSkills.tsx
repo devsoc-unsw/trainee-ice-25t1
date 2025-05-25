@@ -2,7 +2,7 @@ import preq_skill_data from "../../subjectPrereqSkillAssessmentData.json"
 import { CourseCodeInterface } from "./CourseCodeInterface";
 
 function PrerequisiteSkills({code}: CourseCodeInterface) {
-  console.log(code)
+  console.log(preq_skill_data)
   return (
     <div>
       <h2>Prerequisite Skills</h2>
