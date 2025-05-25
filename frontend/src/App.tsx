@@ -5,6 +5,7 @@ import Home from "./pages/Home/Home";
 import CourseInfo from "./pages/CourseInfo/CourseInfo";
 import CourseCompare from "./pages/CourseCompare/CourseCompare";
 import Navbar from "./components/NavBar/NavBar";
+import AnimatedGradientDiv from "./components/AnimatedGradientBackground/AnimatedGradientDiv";
 
 function AppContent() {
   const location = useLocation();
@@ -25,12 +26,11 @@ function AppContent() {
 }
 function App() {
   return (
-    <div className="background">
+    <AnimatedGradientDiv>
       <BrowserRouter>
         <AppContent />
       </BrowserRouter>
-    </div>
-    
+    </AnimatedGradientDiv>
   )
 }
 

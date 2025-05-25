@@ -1,18 +1,17 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import SearchBar from "../../components/SearchBar/Searchbar";
 import SubjectPanel from "../../components/SubjectPanel/SubjectPanel";
+import { StyledDiv, StyledH1 } from "./HomeStyles";
 
-
-
-function Home() {
+const Home = () => {
     const [inputText, setInputText] = useState("");
 
     return (
-        <div>
-            <h1>🏠 Home Page :D</h1>
+        <StyledDiv>
+            <StyledH1>🏠 Home Page 🏠</StyledH1>
             <SearchBar  inputText={inputText} setInputText={setInputText} />
             <SubjectPanel inputText={inputText} />
-        </div>
+        </StyledDiv>
     );
 }
 

@@ -5,8 +5,27 @@
 }
 
 
-.timeline_grid {
-  display: grid;
-  grid-template-columns: repeat(11, 1fr);
-  gap: 1rem;
+.timeline_table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  text-align: left;
+  table-layout: fixed;
 }
+
+.timeline_table th,
+.timeline_table td {
+  padding: 0.5rem;
+  vertical-align: top;
+}
+
+.timeline_table th {
+  background-color: #f2f2f2;
+}
+
+.no-bullets {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+

@@ -1,15 +1,15 @@
 import "./CourseCompareTable.css"
 import courseData from "../../CourseData.json"
-import assessmentData from "../../subjectPrereqSkillAssessmentData.json"
+// import assessmentData from "../../subjectPrereqSkillAssessmentData.json"
 
 interface CourseCompareTableProps {
   code1: string;
   code2: string;
 }
 export default function CourseCompareTable({code1, code2}: CourseCompareTableProps) {
-
-  const assessment1True = code1 in courseData;
-  const assessment2True = code2 in courseData;
+  console.log(`code 1 = ${code1}`)
+  const assessment1True =  ["COMP1511", "COMP1521", "COMP1531", "COMP2511", "COMP2521"].includes(code1);
+  const assessment2True = ["COMP1511", "COMP1521", "COMP1531", "COMP2511", "COMP2521"].includes(code2);
   const weekArray = ["week1", "week2", "week3", "week4", "week5", "week6", "week7", "week8", "week9", "week10", "week11"]
   return (
 
@@ -41,9 +41,9 @@ export default function CourseCompareTable({code1, code2}: CourseCompareTablePro
         <>
           <h2>Week {i + 1}</h2>
           {/* @ts-ignore */}
-          <h3>{assessment1True ? assessmentData[code1]["assessment_timeline"][week].join('; ') : "Unavailable"}</h3>
+          <h3>{assessment1True ? courseData[code1]["assessment_timeline"][week].join('; ') : "Unavailable"}</h3>
           {/* @ts-ignore */}
-          <h3>{assessment2True ? assessmentData[code2]["assessment_timeline"][week].join('; ') : "Unavailable"}</h3>
+          <h3>{assessment2True ? courseData[code2]["assessment_timeline"][week].join('; ') : "Unavailable"}</h3>
         </>)
       })}
 

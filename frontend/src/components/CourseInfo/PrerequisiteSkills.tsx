@@ -1,18 +1,18 @@
-import preq_skill_data from "../../subjectPrereqSkillAssessmentData.json"
-import { CourseCodeInterface } from "./CourseCodeInterface";
+interface PrerequisiteSkillsProps {
+  info?: string[];
+}
 
-function PrerequisiteSkills({code}: CourseCodeInterface) {
-  console.log(preq_skill_data)
+function PrerequisiteSkills({ info }: PrerequisiteSkillsProps) {
+  console.log(info)
   return (
     <div>
       <h2>Prerequisite Skills</h2>
       <ul>
-        {/* @ts-ignore */}
-
-        {preq_skill_data[code].prereq_skills.map(item => {
-          console.log(item)
-          return <li>{item}</li>
-        })}
+        {info && info.length > 0 ? (
+          info.map((item, index) => <li key={index}>{item}</li>)
+        ) : (
+          <li>No prerequisite skills listed.</li>
+        )}
       </ul>
     </div>
   );
