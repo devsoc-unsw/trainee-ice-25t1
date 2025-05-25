@@ -35,7 +35,6 @@ function CourseCompare() {
 
   return (
     <div>
-        <div className='course-compare-searchbars'>
           <div className='autocomplete-wrapper'>
             <Autocomplete
               disablePortal
@@ -55,7 +54,6 @@ function CourseCompare() {
               onChange={(event, newInputValue) => setCode2(newInputValue)}
             />
           </div>
-        </div>
 
       {code1 && code2 && 
 
