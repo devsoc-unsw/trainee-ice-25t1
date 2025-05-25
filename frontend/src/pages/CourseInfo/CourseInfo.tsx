@@ -30,11 +30,11 @@ function CourseInfo() {
       <CourseDescription description={course.description} />
 
       <div className="prerequisites_grid">
-        <PrerequisiteSkills code={code}/>
+        <PrerequisiteSkills info={course.prereq_skills}/>
         <PrerequisiteSubjects prereq={course.raw_requirements} />
       </div>
 
-      <Timeline code={code}/>
+      <Timeline timeline={course.assessment_timeline}/>
     </div>
   );
 }
