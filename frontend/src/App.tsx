@@ -25,10 +25,12 @@ function AppContent() {
 }
 function App() {
   return (
-    <BrowserRouter>
+    <div className="background">
+      <BrowserRouter>
+        <AppContent />
+      </BrowserRouter>
+    </div>
     
-       <AppContent />
-     </BrowserRouter>
   )
 }
 
