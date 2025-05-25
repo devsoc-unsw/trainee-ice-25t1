@@ -15,9 +15,9 @@ const Navbar = () => {
                 <h1 className="logo-title" onClick={() => navigate(`/`)}>Bubbles</h1>
                 <ul>
                     {/* <li><a href="/">Landing🛬</a></li> */}
-                    <li><a href="/home">Home🏠</a></li>
-                    <li><a href="/course-info">Course Info🤔</a></li>
-                    <li><a href="/course-compare">Course Compare📖</a></li>
+                    <li className="link-style" onClick={() => navigate(`/home`)}>Home🏠</li>
+                    <li className="link-style" onClick={() => navigate(`/course-info`)}>Course Info🤔</li>
+                    <li className="link-style" onClick={() => navigate(`/course-compare`)}>Course Compare📖</li>
                 </ul>
             </nav>
         </div>

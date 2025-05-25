@@ -36,7 +36,7 @@ nav li {
     align-items: center;
 }
 
-nav a {
+nav .link-style {
     display: block;
     padding: 10px 16px;
     text-decoration: none;
@@ -44,14 +44,15 @@ nav a {
     text-align: center;
     border-radius: 4px;
     transition: background-color 0.2s ease;
+    cursor: pointer;
 }
 
-nav a:hover {
+nav .link-style:hover {
     color: var( #007BFF);
     background: rgba(255, 255, 255, 0.3);
 }
 
-nav a.active {
+nav .link-style.active {
     font-weight: bold;
     color: var( #007BFF);
 }
