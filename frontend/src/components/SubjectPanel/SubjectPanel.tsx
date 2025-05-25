@@ -1,4 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
+import CourseDataRaw from '../../pages/CourseInfo/Data/CourseData.json'
+import { CourseData } from '../../types/courses';        
+
 import './SubjectPanel.css';
 
 import { useNavigate } from 'react-router-dom';
@@ -9,15 +12,13 @@ type SubjectPanelProps = {
 };
 
 function SubjectPanel({ inputText }: SubjectPanelProps) {
+  const courseData = CourseDataRaw as CourseData;
+  const subjects = Object.keys(courseData).map((code, index) => ({
+    id: index,
+    text: code,
+  }));
   const navigate = useNavigate();
 
-  const [subjects] = useState([
-    { id: 1, text: "COMP1511" },
-    { id: 2, text: "COMP1521" },
-    { id: 3, text: "COMP1531" },
-    { id: 4, text: "COMP2511" },
-    { id: 5, text: "COMP2521" }
-  ]);
 
   const filteredSubjects = subjects.filter(subject =>
     subject.text.toLowerCase().includes(inputText)
