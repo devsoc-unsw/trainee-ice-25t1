@@ -18,7 +18,7 @@ function AppContent() {
       <Routes>
          <Route path="/" element={<Landing/>}/>
          <Route path="/home" element={<Home/>}/>
-         <Route path="/course-info" element={<CourseInfo/>}/>
+         <Route path="/course-info" element={<CourseInfo code={null}/>}/>
          <Route path="/course-compare" element={<CourseCompare/>}/>
        </Routes>
     </>
