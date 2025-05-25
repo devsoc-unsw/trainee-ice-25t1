@@ -26,7 +26,7 @@ function CourseCompare() {
   }, []);
 
   return (
-    <div className="background" ref={backgroundRef}>
+    <div>
       <div className="courses-container">
         <div><CourseInfo /></div>
         <div><CourseInfo /></div>
