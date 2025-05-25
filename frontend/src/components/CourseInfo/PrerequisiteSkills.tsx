@@ -3,12 +3,13 @@ import { styled } from "@mui/material";
 interface PrerequisiteSkillsProps {
   info?: string[];
 }
+
 const StyledLi = styled("li")(() => ({
   listStyleType: "none"
 }))
 
-function PrerequisiteSkills({ info }: PrerequisiteSkillsProps) {
-  console.log(info)
+const PrerequisiteSkills = ({ info }: PrerequisiteSkillsProps) => {
+  // console.log(info)
   return (
     <div>
       <h2>Prerequisite Skills</h2>
