@@ -1,21 +1,10 @@
-// import CourseInfo from '../CourseInfo/CourseInfo.tsx';
 import './CourseCompare.css';
 import { useEffect, useRef, useState } from "react";
-
-// import { useLocation } from 'react-router-dom';
 import CourseCompareTable from './CourseCompareTable.tsx';
-// import CourseInfo from '../CourseInfo/CourseInfo.tsx';
 
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import courseData from "../../CourseData.json"
-
-
-
-
-// const useQuery = () => {
-//   return new URLSearchParams(useLocation().search);
-// };
 
 function CourseCompare() {
 
@@ -23,19 +12,6 @@ function CourseCompare() {
   const [code2, setCode2] = useState<string | null>(null)
 
   const backgroundRef = useRef<HTMLDivElement>(null);
-
-  // const query = useQuery();
-
-  // var code1 = query.get('code1') as string;
-  // var code2 = query.get('code2') as string;
-
-  // if (!code1)
-  //   code1 = 'COMP1511';
-  // if (!code2)
-  //   code2 = 'COMP1531';
-
-  // code1 = code1.toUpperCase();
-  // code2 =  code2.toUpperCase();
 
   useEffect(() => {
     function updateHeight() {
