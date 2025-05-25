@@ -5,8 +5,21 @@ import CourseCompareTable from './CourseCompareTable.tsx';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import courseData from "../../CourseData.json"
+import { styled } from '@mui/material';
 
-function CourseCompare() {
+const StyledDiv = styled("div")(() => ({
+  color: "#bfedb4",
+  margin: "2rem",
+  paddingRight: "1rem",
+  paddingBottom: "2rem",
+  background: "rgba(12, 113, 76, 0.4)",
+  backdropFilter: "blur(10px)",
+  border: "1px solid #bfedb4",
+  boxShadow: "0 8px 32px rgba(0, 0, 0, 0.1)",
+  borderRadius: "15px",
+}))
+
+const CourseCompare = () => {
 
   const [code1, setCode1] = useState<string | null>(null);
   const [code2, setCode2] = useState<string | null>(null)
@@ -37,7 +50,6 @@ function CourseCompare() {
     <div>
           <div className='autocomplete-wrapper'>
             <Autocomplete
-              disablePortal
               options={Object.keys(courseData)}
               sx={{ width: 300 }}
               renderInput={(params) => <TextField {...params} label="Course 1" />}
@@ -47,7 +59,6 @@ function CourseCompare() {
           </div>
           <div className='autocomplete-wrapper'>
             <Autocomplete
-              disablePortal
               options={Object.keys(courseData)}
               sx={{ width: 300 }}
               renderInput={(params) => <TextField {...params} label="Course 2" />}
@@ -57,9 +68,9 @@ function CourseCompare() {
 
       {code1 && code2 && 
 
-      <div className="courses-container">
+      <StyledDiv className="courses-container">
         <CourseCompareTable code1={code1} code2={code2} />
-      </div>
+      </StyledDiv>
       }
     </div>
   );

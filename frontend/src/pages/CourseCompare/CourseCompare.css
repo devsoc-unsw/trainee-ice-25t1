@@ -5,7 +5,6 @@
 
 .courses-container > div {
   flex: 1;              
-  padding: 1rem;         
   box-sizing: border-box;
 }
 
@@ -19,7 +18,11 @@
   margin-top: 2%;
   margin-bottom: 1%;
   display: inline-block;
-  margin-left: 1%;
-  margin-right: 1%;
-  background-color: white;;
+  margin-left: 10%;
+  margin-right: 10%;
+  /* For Glassmorphism */
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
 }
