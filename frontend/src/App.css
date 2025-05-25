@@ -1,14 +1,14 @@
 #root {
   /* max-width: 1280px; */
-  margin: 0 auto;
+  /* margin: 0 auto; */
   /* padding: 2rem; */
   text-align: center;
 }
 
-.background {
+/* .background {
   min-height: 100vh;
   background-image: url("/background.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-}
+} */

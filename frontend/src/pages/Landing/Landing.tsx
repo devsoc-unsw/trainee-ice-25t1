@@ -1,33 +1,8 @@
-import "./Landing.css";
 import { useNavigate } from 'react-router-dom';
-import { keyframes } from "@emotion/react";
-import { styled } from "@mui/system";
+import AnimatedGradientDiv from "../../components/AnimatedGradientBackground/AnimatedGradientDiv";
+import "./Landing.css";
 
 <link href="https://fonts.cdnfonts.com/css/kaushan-script" rel="stylesheet"></link>
-
-// Adapted from: https://codepen.io/hylobates-lar/pen/qBbQeON
-const gradientAnimation = keyframes`
-  0% {
-    background-position: 50% 0%;
-  }
-  50% {
-    background-position: 50% 100%;
-  }
-  100% {
-    background-position: 50% 0%;
-  }
-`;
-
-const AnimatedGradientDiv = styled("div")(() => ({
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    width: "100vw",
-    minHeight: '100vh',
-    background: "linear-gradient(to bottom, #193e54,rgb(92, 117, 88), #3d968a, #a3dda5)",  
-    backgroundSize: "150% 150%",
-    animation: `${gradientAnimation} 10s ease infinite`,
-}))
 
 const Landing = () => {
     const navigate = useNavigate();
