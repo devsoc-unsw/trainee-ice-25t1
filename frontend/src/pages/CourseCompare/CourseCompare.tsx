@@ -27,14 +27,11 @@ function CourseCompare() {
 
   return (
     <div>
-      <div className="background" ref={backgroundRef}>
-        <div className="courses-container">
-          <div><CourseInfo /></div>
-          <div><CourseInfo /></div>
-        </div>
+      <div className="courses-container">
+        <div><CourseInfo /></div>
+        <div><CourseInfo /></div>
       </div>
     </div>
-    
   );
 }
 
