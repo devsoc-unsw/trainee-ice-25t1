@@ -47,7 +47,7 @@ function CourseInfo({code}: CourseCodeInterface) {
   const course = courseData[_code];
   return (
     <StyledDiv>
-      <h1>{_code}🤔</h1>
+      <h1>{_code} ~ {course.title} 🤔</h1>
       <CourseDescription description={course.description} />
 
       <div className="prerequisites_grid">
