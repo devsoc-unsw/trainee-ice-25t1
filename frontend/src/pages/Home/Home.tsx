@@ -8,7 +8,7 @@ const Home = () => {
 
     return (
         <StyledDiv>
-            <StyledH1>🏠 Home Page 🏠</StyledH1>
+            <StyledH1> Home Page 🏠</StyledH1>
             <SearchBar  inputText={inputText} setInputText={setInputText} />
             <SubjectPanel inputText={inputText} />
         </StyledDiv>

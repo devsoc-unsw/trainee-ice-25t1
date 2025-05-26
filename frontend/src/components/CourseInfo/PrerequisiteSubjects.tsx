@@ -1,8 +1,12 @@
-function PrerequisiteSubjects({ prereq } : { prereq : string }) {
+const PrerequisiteSubjects = ({ prereq } : { prereq : string }) => {
   return (
     <div>
       <h2>Prerequisites</h2>
-      <p>{ prereq }</p>
+        {prereq && prereq.length > 0 ? (
+          <p>{ prereq }</p>
+        ) : (
+          <p>None</p>
+        )}
     </div>
   );
 }

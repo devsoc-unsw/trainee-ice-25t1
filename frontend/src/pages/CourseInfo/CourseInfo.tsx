@@ -9,10 +9,23 @@ import { useLocation } from 'react-router-dom';
 
 import './CourseInfo.css';
 import { CourseCodeInterface } from '../../components/CourseInfo/CourseCodeInterface.tsx';
+import { styled } from '@mui/material';
 
 const useQuery = () => {
   return new URLSearchParams(useLocation().search);
 };
+
+const StyledDiv = styled("div")(() => ({
+  color: "#bfedb4",
+  margin: "2rem",
+  padding: "1rem",
+  paddingBottom: "2rem",
+  background: "rgba(12, 113, 76, 0.4)",
+  backdropFilter: "blur(10px)",
+  border: "1px solid #bfedb4",
+  boxShadow: "0 8px 32px rgba(0, 0, 0, 0.1)",
+  borderRadius: "15px",
+}))
 
 function CourseInfo({code}: CourseCodeInterface) {
   const query = useQuery();
@@ -33,8 +46,8 @@ function CourseInfo({code}: CourseCodeInterface) {
   const courseData = CourseDataRaw as CourseData;
   const course = courseData[_code];
   return (
-    <div>
-      <h1>📖{_code}</h1>
+    <StyledDiv>
+      <h1>{_code}🤔</h1>
       <CourseDescription description={course.description} />
 
       <div className="prerequisites_grid">
@@ -43,7 +56,7 @@ function CourseInfo({code}: CourseCodeInterface) {
       </div>
 
       <Timeline timeline={course.assessment_timeline}/>
-    </div>
+    </StyledDiv>
   );
 }
 
